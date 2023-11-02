@@ -1,10 +1,10 @@
 .navbar {
-  position: relative;
+  position: absolute;
   margin-top: 20px;
   display: flex;
-  height: 35%;
   width: 100%;
   justify-content: flex-end;
+  z-index: 1;
 }
 
 /* Hamburger Button Styles */
@@ -34,7 +34,7 @@
 .menu-item {
   padding: 10px;
   margin: 0 30px;
-  color: #a4906f;
+  color: #e3b975;
   cursor: pointer;
   font-size: 23px;
   height: 40px;
@@ -42,11 +42,11 @@
 }
 
 .menu-item:hover {
-  transform: scale(1.5) translateY(-5px);
+  transform: scale(1) translateY(-5px) translateX(-10px);
 }
 
 /* Media Query for Hamburger Menu */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .hamburger {
     display: block; /* Show the button */
   }
@@ -54,28 +54,26 @@
   .menu {
     display: none; /* Initially hide the menu items */
     flex-direction: column;
-    background: #fff3e3;
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: 0;
     width: 100%;
   }
-
   .menu.open {
     display: flex; /* Show the menu items when open */
     width: 145px;
     z-index: 100;
     mix-blend-mode: darken;
+    width:100%;
+    height: 100vh;
+    background-color: #272626;
   }
-
   .line.open:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
-
   .line.open:nth-child(2) {
     transform: scale(0);
   }
-
   .line.open:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
@@ -85,6 +83,6 @@
     margin-bottom: 1px;
   }
   .menu-item:hover {
-    transform: scale(1.5) translateY(-5px) translateX(-30px);
+    transform: scale(1.1) translateY(-1px);
   }
 }
