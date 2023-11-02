@@ -12,7 +12,11 @@ const Hero = () => {
   return (
     <div
       className="hero-container"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{
+        backgroundColor: "#000",
+        // backgroundImage: `url(${backgroundImage})`,
+        dropFilter: "blur(10px)",
+      }}
     >
       <RotatingSlider onSlideChange={handleSlideChange} />
     </div>

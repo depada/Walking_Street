@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`navbar ${menuOpen ? "open" : ""}`}>
+    <div className="navbar">
       <button className="hamburger" onClick={toggleMenu}>
         <div className={`line ${menuOpen ? "open" : ""}`}></div>
         <div className={`line ${menuOpen ? "open" : ""}`}></div>

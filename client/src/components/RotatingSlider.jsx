@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/RotatingStyles.css";
 import {
   TiChevronLeftOutline,
@@ -34,7 +34,6 @@ const Card = ({ img, onClick }) => (
 
 const Carousel = ({ children }) => {
   const [active, setActive] = useState(0);
-
   const prevSlide = () => {
     setActive((active - 1 + SLIDES) % SLIDES);
   };
@@ -42,6 +41,12 @@ const Carousel = ({ children }) => {
   const nextSlide = () => {
     setActive((active + 1) % SLIDES);
   };
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActive((active + 1) % SLIDES);
+    }, 3000);
+    return () => clearInterval(intervalId);
+  }, [active]);
 
   return (
     <div className="carousel">
@@ -50,7 +55,7 @@ const Carousel = ({ children }) => {
           <TiChevronLeftOutline />
         </button>
       )}
-
+      f
       {React.Children.map(children, (child, i) => (
         <div
           className="card-container"
@@ -67,7 +72,6 @@ const Carousel = ({ children }) => {
           {child}
         </div>
       ))}
-
       {active < SLIDES - 1 && (
         <button className="nav right" onClick={nextSlide}>
           <TiChevronRightOutline />
