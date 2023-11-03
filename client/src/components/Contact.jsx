@@ -73,18 +73,6 @@ const Contact = () => {
         alignItems: "center",
       }}
     >
-      <div>
-        <img
-          style={{
-            height: "180px",
-            width: "180px",
-            mixBlendMode: "multiply",
-            marginLeft: "100px",
-          }}
-          src={logo}
-          alt=""
-        />
-      </div>
       <Navbar />
       <div className="social-icons">
         <a href="">

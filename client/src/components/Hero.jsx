@@ -1,7 +1,7 @@
 import React from "react";
 
 const Hero = () => {
-  return <div style={{ height: "120vh", width: "100vw" }}>Hero</div>;
+  return <div style={{ height: "100vh", width: "100vw" }}>Hero</div>;
 };
 
 export default Hero;

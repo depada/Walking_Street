@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+// import logo from "../assets/logo.jpg";
+import logoTransparent from "../assets/logo_white.png";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -19,22 +21,6 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 0) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <div
       style={{ opacity: 1 }}
@@ -46,29 +32,34 @@ const Navbar = () => {
         <div className={`line ${menuOpen ? "open" : ""}`}></div>
       </button>
       <ul className={`menu ${menuOpen ? "open" : ""}`}>
-        <li className="menu-item">
-          <a
-            href="#hero-container"
-            onClick={(e) => handleAnchorClick(e, "hero-container")}
-          >
-            Home
-          </a>
-        </li>
-        <li className="menu-item">
-          <a href="#about" onClick={(e) => handleAnchorClick(e, "about")}>
-            About
-          </a>
-        </li>
-        <li className="menu-item">
-          <a href="#booking" onClick={(e) => handleAnchorClick(e, "booking")}>
-            Booking
-          </a>
-        </li>
-        <li className="menu-item">
-          <a href="#contact" onClick={(e) => handleAnchorClick(e, "contact")}>
-            Contact
-          </a>
-        </li>
+        <div className="logo-container">
+          <img src={logoTransparent} alt="logo" />
+        </div>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <li className="menu-item">
+            <a
+              href="#hero-container"
+              onClick={(e) => handleAnchorClick(e, "hero-container")}
+            >
+              Home
+            </a>
+          </li>
+          <li className="menu-item">
+            <a href="#about" onClick={(e) => handleAnchorClick(e, "about")}>
+              About
+            </a>
+          </li>
+          <li className="menu-item">
+            <a href="#booking" onClick={(e) => handleAnchorClick(e, "booking")}>
+              Booking
+            </a>
+          </li>
+          <li className="menu-item">
+            <a href="#contact" onClick={(e) => handleAnchorClick(e, "contact")}>
+              Contact
+            </a>
+          </li>
+        </div>
       </ul>
     </div>
   );
