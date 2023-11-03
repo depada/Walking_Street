@@ -1,5 +1,5 @@
 .navbar {
-  position: absolute;
+  /* position: absolute; */
   margin-top: 20px;
   display: flex;
   width: 100%;
@@ -36,9 +36,15 @@
   margin: 0 30px;
   color: #e3b975;
   cursor: pointer;
+  text-decoration: none;
   font-size: 23px;
   height: 40px;
   transition: transform 0.2s ease-in-out;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #e3b975;
 }
 
 .menu-item:hover {
@@ -64,7 +70,7 @@
     width: 145px;
     z-index: 100;
     mix-blend-mode: darken;
-    width:100%;
+    width: 100%;
     height: 100vh;
     background-color: #272626;
   }
